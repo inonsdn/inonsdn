@@ -2,7 +2,7 @@
 import { twMerge } from "tailwind-merge"
 import ChatBubble from "./ChatBubble"
 import ChatInput from "./ChatInput"
-import {ChatEvent} from "@/src/repositories/chats/ChatEventRepo"
+import {ChatEvent} from "@/src/repositories/ChatEventRepo"
 import ChatTopBar from "./ChatTopBar"
 
 const baseClasses =`

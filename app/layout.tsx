@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Tab from "@/src/widgets/Tab";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased [-webkit-text-size-adjust:none]`}
     >
-      <body className="h-full flex flex-col">
+      <body className="h-full flex flex-col overflow-x-hidden">
+        <Tab></Tab>
         {children}
       </body>
     </html>

@@ -3,10 +3,8 @@ import { twMerge } from "tailwind-merge"
 const baseClasses =`
     rounded-lg
     bg-secondary
-    overflow-x-auto
+    overflow-hidden
     flex flex-nowrap
-    w-200
-    h-20
     `
 
 interface CardProps {

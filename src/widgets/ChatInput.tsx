@@ -43,7 +43,7 @@ export default function ChatInput({className}: ChatInputProps) {
                 onKeyDown={handleInputKeyDown}
             />
             <Button
-                name="|>"
+                name="Send"
                 className="w-20"
                 onClick={handleSend_cb}
             />

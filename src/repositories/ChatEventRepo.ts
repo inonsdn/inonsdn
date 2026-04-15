@@ -7,7 +7,7 @@ export interface ChatEvent {
 }
 
 export class ChatEventRepo {
-    private readonly baseUrl = ""
+    private readonly baseUrl = process.env.BASE_URL
 
     async getMockup(): Promise<Array<ChatEvent>> {
         const res = await fetch("https://dummyjson.com/quotes")
