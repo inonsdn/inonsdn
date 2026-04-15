@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b0412;
+  --foreground: #f9efff;
+  --primary: #b663d0;
+  --primary-hover: #9a47b8;
+  --secondary: #3d1d5d;
+  --accent: #ecb7eb;
+  --input-bg: rgba(60, 24, 96, 0.9);
+  --border: #8052b3;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
+  min-height: 100vh;
+  margin: 0;
+  background-image:
+    radial-gradient(circle at top center, rgba(229, 144, 255, 0.15), transparent 25%),
+    radial-gradient(circle at 20% 20%, rgba(255, 169, 226, 0.12), transparent 18%),
+    radial-gradient(circle at 85% 5%, rgba(181, 98, 219, 0.18), transparent 20%),
+    linear-gradient(180deg, #12061b 0%, #07020d 100%);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: rgba(182, 95, 223, 0.35);
+  color: var(--foreground);
 }
