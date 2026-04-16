@@ -67,9 +67,6 @@ export default function Tab({className}: TabProps) {
 
     const router = useRouter()
 
-    const handleBackClick_cb = () => {
-        router.push('/')
-    }
 
     const menuComponents = () => {
         return menuNames.map((m) => {

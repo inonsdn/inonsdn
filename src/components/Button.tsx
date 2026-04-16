@@ -26,9 +26,10 @@ interface ButtonProps {
     name: string
     onClick?: MouseEventHandler<HTMLButtonElement>
     className?: string
+    type?: 'button' | 'submit' | 'reset'
 }
 
-export default function Button({ name, onClick, className = '' }: ButtonProps) {
+export default function Button({ name, onClick, className = '', type = 'button' }: ButtonProps) {
     // handle in case no callback
     const handleClick = onClick ?? ((e) => {
         console.log(e)
@@ -39,7 +40,7 @@ export default function Button({ name, onClick, className = '' }: ButtonProps) {
 
     return (
         <button
-            type="button"
+            type={type}
             onClick={handleClick}
             className={mergedClassName}
         >

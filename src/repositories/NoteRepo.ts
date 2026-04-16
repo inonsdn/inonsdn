@@ -21,6 +21,28 @@ export class NoteRepo {
         }))
     }
 
+    async updateNote(id: number, title: string, text: string): Promise<Note> {
+        const requestUrl = `${this.baseUrl}/notes/${id}`
+        const res = await fetch(requestUrl, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ title, text }),
+        })
+        const data = await res.json()
+        return { id: data.Id, title: data.Title, text: data.Text }
+    }
+
+    async createNote(title: string, text: string): Promise<Note> {
+        const requestUrl = `${this.baseUrl}/notes`
+        const res = await fetch(requestUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ userId: this.userId, title, text }),
+        })
+        const data = await res.json()
+        return { id: data.Id, title: data.Title, text: data.Text }
+    }
+
     async getMyNotes(): Promise<Array<Note>> {
         const requestUrl = `${this.baseUrl}/myNotes/${this.userId}`
         const res = await fetch(

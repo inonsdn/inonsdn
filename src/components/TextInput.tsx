@@ -19,11 +19,12 @@ interface TextInputProps {
     value?: string
     placeholder?: string
     className?: string
+    name?: string
     onValueUpdate_cb?: ChangeEventHandler<HTMLInputElement>
     onKeyDown?: KeyboardEventHandler<HTMLInputElement>
 }
 
-export default function TextInput({ value, placeholder, className, onValueUpdate_cb, onKeyDown }: TextInputProps) {
+export default function TextInput({ value, placeholder, className, name, onValueUpdate_cb, onKeyDown }: TextInputProps) {
 
     // merge style class
     const mergedClassName = twMerge(baseClasses, className).trim()
@@ -31,6 +32,7 @@ export default function TextInput({ value, placeholder, className, onValueUpdate
     return (
         <input
             type="text"
+            name={name}
             value={value}
             placeholder={placeholder}
             className={mergedClassName}
